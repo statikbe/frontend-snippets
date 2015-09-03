@@ -1,3 +1,7 @@
+/**
+ * TODO: Rewrite to vanilla js
+ */
+
 (function($){
     'use strict';
 
