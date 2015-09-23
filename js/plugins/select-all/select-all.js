@@ -1,6 +1,6 @@
 'use strict';
 
-(function () {
+(function (window, undefined) {
 
     var SelectAll = function (selector) {
         var elements = document.querySelectorAll(selector);
@@ -119,4 +119,4 @@
         || Element.prototype.msMatchesSelector || Element.prototype.oMatchesSelector
         || Element.prototype.webkitMatchesSelector || Element.prototype.webkitMatchesSelector);
 
-}());
+}(window));
