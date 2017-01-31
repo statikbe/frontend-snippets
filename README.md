@@ -6,6 +6,10 @@ A repo for usefull frontend snippets.
 
 ## Changelog
 
+**31/01/2017**
+
+* Added .gitignore
+
 **27/01/2017**
 
 
