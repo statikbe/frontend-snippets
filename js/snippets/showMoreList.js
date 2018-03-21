@@ -1,6 +1,6 @@
 function showMoreList() {
 
-    $('[data-item-limit]').each((index, item) => {
+    $('.js-show-more-list').each((index, item) => {
 
         const $this = $(item);
         let $children = $this.children();
@@ -13,18 +13,15 @@ function showMoreList() {
         const linkId = 'item-list-' + index;
         const linkWrapperClass = $this.attr('data-link-wrapper-class') || '';
         const linkClass = $this.attr('data-link-class') || '';
-        const linkLabel = $this.attr('data-label-expand');
-        const linkIcon =  hasActiveItem ? '<span class="icon icon--remove">' : '<span class="icon icon--add">';
+        const linkHtml = hasActiveItem ? $this.attr('data-link-html-collapse') : $this.attr('data-link-html-expand');
 
         $this.attr('id', linkId);
-
-        console.log($children.length, itemLimit);
 
         if ($children.length > itemLimit) {
 
             $this.after(`
-                <div class="${linkWrapperClass}">
-                    <a href="javascript:void(0);" data-list="#${linkId}" class="${linkClass} js-toggle-item-list">${linkIcon}${linkLabel}</a>
+                <div class="${ linkWrapperClass }">
+                    <a href="javascript:void(0);" data-list="#${ linkId }" class="${ linkClass } js-toggle-item-list">${ linkHtml }</a>
                 </div>
             `);
 
@@ -46,11 +43,7 @@ function showMoreList() {
 
         var isExpanded = $children.last().is(':visible');
 
-        if (isExpanded) {
-            $this.html(`<span class="icon icon--remove"></span>${$list.attr('data-label-collapse')}`);
-        } else {
-            $this.html(`<span class="icon icon--add"></span>${$list.attr('data-label-expand')}`);
-        }
+        $this.html(isExpanded ? $list.attr('data-link-html-collapse') : $list.attr('data-link-html-expand'));
 
         $this.blur();
     });
