@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+
+        body {
+            font-family: sans-serif;
+        }
+
+        .block + .block {
+            margin-top: 24px;
+        }
+
+        .btn,
+        .btn:active,
+        .btn:visited,
+        .btn:hover,
+        .btn:focus {
+            font-size: 1rem;
+            line-height: 2;
+            padding: 0 12px;
+            display: inline-block;
+            background: blue;
+            text-decoration: none;
+            border-radius: 5px;
+            color: white;
+        }
+
+    </style>
+</head>
+<body>
+
+    <ul class="block"
+        data-item-limit="4"
+        data-label-expand="Show more"
+        data-label-collapse="Show less"
+        data-link-wrapper-class="block"
+        data-link-class="btn">
+        <li>One</li>
+        <li>Two</li>
+        <li>Three</li>
+        <li>Four</li>
+        <li>Five</li>
+        <li>Six</li>
+        <li>Seven</li>
+        <li>Eight</li>
+        <li>Nine</li>
+        <li>Ten</li>
+    </ul>
+
+    <script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
+    <script src="../js/snippets/showMoreList.js"></script>
+    <script>
+        $(showMoreList);
+    </script>
+</body>
+</html>
